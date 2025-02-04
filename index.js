@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const dotenv = require("dotenv").config();
 const { dbConnect } = require("./utils/dbConnect");
 const app = require("./app");
+require("dotenv").config();
 
 const cors = require("cors");
 const corsConfig = {
