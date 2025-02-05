@@ -7,6 +7,7 @@ app.use(cors());
 
 // routes
 app.use("/users", require("./routes/userRoute"));
+app.use("/category", require("./routes/categoryRoute"));
 
 app.get("/", (req, res) => {
   res.send("Two Star Fashion Server is working");
