@@ -11,7 +11,7 @@ app.use("/category", require("./routes/categoryRoute"));
 app.use("/subcategory", require("./routes/subCategoryRoute"));
 app.use("/upComing", require("./routes/upComingRoute"));
 app.use("/reviews", require("./routes/reviewsRoute"));
-// app.use("/reviews", require("./routes/productsRoute"));
+app.use("/product", require("./routes/productsRoute"));
 
 app.get("/", (req, res) => {
   res.send("Two Star Fashion Server is working");
