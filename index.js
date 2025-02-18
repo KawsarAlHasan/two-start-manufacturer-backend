@@ -1,18 +1,20 @@
-const mongoose = require("mongoose");
 const { dbConnect } = require("./utils/dbConnect");
+const express = require("express");
 const app = require("./app");
 require("dotenv").config();
-
+const bodyParser = require("body-parser");
 const cors = require("cors");
-const corsConfig = {
+
+const globalCorsOptions = {
   origin: "*",
-  credential: true,
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders: "Content-Type,Authorization",
 };
-
-app.options("", cors(corsConfig));
-
-app.use(cors(corsConfig));
+app.use(cors(globalCorsOptions));
+app.options("*", cors(globalCorsOptions));
+app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // database connection
 dbConnect();
