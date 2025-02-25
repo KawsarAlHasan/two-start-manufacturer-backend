@@ -13,6 +13,7 @@ app.use("/upComing", require("./routes/upComingRoute"));
 app.use("/reviews", require("./routes/reviewsRoute"));
 app.use("/product", require("./routes/productsRoute"));
 app.use("/addToCard", require("./routes/addToCardRoute"));
+app.use("/orders", require("./routes/ordersRoute"));
 
 app.get("/", (req, res) => {
   res.send("Two Star Fashion Server is working");
